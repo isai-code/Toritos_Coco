@@ -1,0 +1,188 @@
+/* === ESTILOS GENERALES === */
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fdf6f0; /* Beige clarito más uniforme */
+    color: #333; /* Texto más legible */
+}
+
+/* === ENCABEZADO / PORTADA === */
+.header {
+    background: url('torito.jpg') no-repeat center center/cover; /* Imagen de fondo */
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative; /* Necesario para poner la capa oscura */
+}
+/* Capa oscura encima de la imagen para mejorar la legibilidad */
+.header::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5); /* negro transparente */
+}
+/* El texto debe estar encima de la capa */
+.header h1, 
+.header .tagline {
+    position: relative;
+    z-index: 1;
+}
+.header h1 {
+    font-size: 60px;
+    margin: 0;
+}
+.tagline {
+    font-size: 22px;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* === SECCIÓN DE DESCRIPCIÓN === */
+.container {
+    text-align: center;
+    padding: 40px 20px;
+}
+.description {
+    max-width: 800px;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* === MENÚ DE PLATILLOS === */
+.menu {
+    background-color: #fff8e6; /* Beige claro */
+    padding: 40px;
+    margin-top: 20px;
+    text-align: center;
+}
+.menu h2 {
+    color: #cc4100;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    max-width: 900px;
+    text-align: left;
+}
+.menu-item img {
+    width: 180px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 10px;
+    object-fit: cover; /* Hace que las imágenes se ajusten bien */
+}
+.menu-item h3 {
+    font-size: 22px;
+    color: #cc4100;
+    margin: 0;
+}
+.menu-item p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0;
+}
+.price {
+    font-size: 18px;
+    color: #990000;
+    font-weight: bold;
+}
+
+/* === SECCIÓN DE CONTACTO === */
+.contact-section {
+    background-color: #ffcc66;
+    padding: 40px 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.contact-section h2 {
+    font-size: 36px;
+    color: #993300;
+}
+.contact-section p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+/* Mapa responsivo */
+.contact-section iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* === BOTÓN DE WHATSAPP === */
+.whatsapp-link {
+    position: fixed;
+    top: 20px;
+    right: 20px;  /* esquina superior derecha */
+    background: #25d366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 1000; /* para que siempre quede arriba */
+}
+.whatsapp-link:hover {
+    background: #128c7e;
+}
+
+/* === PIE DE PÁGINA === */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+/* === RESPONSIVIDAD PARA CELULAR === */
+@media (max-width: 768px) {
+    .menu-item {
+        flex-direction: column; /* Platillos uno abajo del otro */
+        text-align: center;
+    }
+    .menu-item img {
+        margin: 0 0 15px 0;
+        width: 100%;
+        height: auto;
+    }
+}
+/* Contenedor con 2 columnas */
+.locacion {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* para que en móvil se acomode abajo */
+    margin-top: 20px;
+}
+
+/* Cada columna */
+.locacion .map,
+.locacion .gallery {
+    flex: 1 1 400px; /* mínimo 400px de ancho, luego se adaptan */
+    text-align: center;
+    margin: 50px 0px 0px 0px;
+}
+
+/* Imagen del local */
+.locacion img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
